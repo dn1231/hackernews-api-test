@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="6" time="93.129" timestamp="2025-10-28T16:41:00.618585-07:00" hostname="MacBook-Pro.local"><testcase classname="tests.test_comments" name="test_first_comment_of_top_story_if_exists" time="30.990" /><testcase classname="tests.test_edge_cases" name="test_invalid_item_id_returns_none" time="10.327" /><testcase classname="tests.test_edge_cases" name="test_negative_item_id_is_invalid_but_server_response_is_graceful" time="10.330" /><testcase classname="tests.test_items_api" name="test_current_top_story_details_type_story_and_fields" time="20.636" /><testcase classname="tests.test_top_stories" name="test_top_stories_returns_non_empty_list_and_ints" time="10.332" /><testcase classname="tests.test_top_stories" name="test_top_stories_performance_under_2s" time="10.314"><failure message="AssertionError: Top stories call should be fast (&lt;2s), was 10.312s&#10;assert 10.311820983886719 &lt; 2.0">def test_top_stories_performance_under_2s():
+        start = time.time()
+        _ = client.get_top_stories_ids()
+        elapsed = time.time() - start
+&gt;       assert elapsed &lt; 2.0, f"Top stories call should be fast (&lt;2s), was {elapsed:.3f}s"
+E       AssertionError: Top stories call should be fast (&lt;2s), was 10.312s
+E       assert 10.311820983886719 &lt; 2.0
+
+tests/test_top_stories.py:15: AssertionError</failure></testcase></testsuite></testsuites>
