@@ -8,6 +8,7 @@ def test_top_stories_returns_non_empty_list_and_ints():
     assert isinstance(ids, list) and len(ids) > 0, "Top stories should be a non-empty list"
     assert all(isinstance(i, int) for i in ids), "All IDs should be integers"
 
+#used under 2 secs to assert performance as anything over 1 sec would be an issue for performance testing.
 def test_top_stories_performance_under_2s():
     start = time.time()
     _ = client.get_top_stories_ids()
